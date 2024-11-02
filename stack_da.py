@@ -1,9 +1,9 @@
-# Name:
-# OSU Email:
+# Name: Derek Greene
+# OSU Email: greenede@oregonstate.edu
 # Course: CS261 - Data Structures
-# Assignment:
-# Due Date:
-# Description:
+# Assignment: Assignment 3 Linked List and ADT Implementation 
+# Due Date: 11/4/2024
+# Description: Completed methods for Stack class to push elements to stack, pop elements from stack, and return value at top of stack.
 
 
 from dynamic_array import *
@@ -52,23 +52,37 @@ class Stack:
 
     def push(self, value: object) -> None:
         """
-        TODO: Write this implementation
+        Method to push given value to top of stack.
+        Parameters: value: object
+        Returns: None
         """
-        pass
+        self._da.append(value)
 
     def pop(self) -> object:
         """
-        TODO: Write this implementation
+        Method to pop value off top of stack and return its value. Raises exception if stack is empty.
+        Parameters: None
+        Returns: value: object
         """
-        pass
+        if self.is_empty():
+            raise StackException("ERROR: Empty Stack!")
+        else:
+            value = self._da.get_at_index(self.size() - 1)
+            self._da.remove_at_index(self.size() - 1)
+            return value
 
     def top(self) -> object:
         """
-        TODO: Write this implementation
+        Method to return value at top of stack.
+        Parameters: None
+        Returns: top: object
         """
-        pass
+        if self.is_empty():
+            raise StackException("ERROR: Empty Stack!")
+        
+        top = self._da.get_at_index(self.size() - 1)
 
-
+        return top
 # ------------------- BASIC TESTING -----------------------------------------
 
 

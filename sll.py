@@ -3,7 +3,7 @@
 # Course: CS261 - Data Structures
 # Assignment: Assignment 3 Linked List and ADT Implementation 
 # Due Date: 11/4/2024
-# Description:
+# Description: Completed various methods of the LinkedList class including methods to insert items in front and back, remove, slice, and count, among others. 
 
 
 from SLNode import *
@@ -68,6 +68,11 @@ class LinkedList:
     # ------------------------------------------------------------------ #
 
     def insert_front(self, value: object) -> None:
+        """
+        Method to insert given value at front of list.
+        Parameters: value: object
+        Returns: None
+        """
         newNode = SLNode(value)
 
         # set NewNode next = to head's next to preserve link
@@ -75,6 +80,11 @@ class LinkedList:
         self._head.next = newNode
 
     def insert_back(self, value: object) -> None:
+        """
+        Method to insert given value at back of list.
+        Parameters: value: object
+        Returns: None
+        """
         newNode = SLNode(value)
         node = self._head
         
@@ -84,6 +94,12 @@ class LinkedList:
         node.next = newNode         
 
     def insert_at_index(self, index: int, value: object) -> None:
+        """
+        Method to insert given value into list at specified index. Raises an exception if index
+        is out of range.
+        Parameters: index: int, value: object
+        Returns: None
+        """
         newNode = SLNode(value)
         node = self._head
         
@@ -98,6 +114,11 @@ class LinkedList:
         node.next = newNode
 
     def remove_at_index(self, index: int) -> None:
+        """
+        Method to remove value at given index. Raises an exception is index is out of range.
+        Parameters: index: int
+        Returns: None
+        """
         node = self._head    
         
         if index < 0 or index > self.length() - 1:
@@ -110,6 +131,11 @@ class LinkedList:
         prevNode.next = prevNode.next.next           
         
     def remove(self, value: object) -> bool:
+        """
+        Method to remove first node in list that matches given value. Returns true if node was remove, otherwise false.
+        Parameters: value: object
+        Returns: bool
+        """
         node = self._head
 
         while node:
@@ -123,6 +149,11 @@ class LinkedList:
         return False
 
     def count(self, value: object) -> int:
+        """
+        Method to count and return number of occurances for given value in list.
+        Parameters: value: object
+        Returns: int
+        """
         node = self._head
         count = 0
 
@@ -134,6 +165,11 @@ class LinkedList:
         return count
 
     def find(self, value: object) -> bool:
+        """
+        Method to parse list and determine if given value is present. If present returns true, otherwise false.
+        Parameters: value: object
+        Returns: bool
+        """
         node = self._head
         
         while node:
@@ -144,6 +180,11 @@ class LinkedList:
         return False
 
     def slice(self, start_index: int, size: int) -> "LinkedList":
+        """
+        Method to slice list from given start index to specified "size" and return new linked list with only the sliced values.
+        Parameters: start_index: int, size: int
+        Returns: LinkedList: object
+        """
         newlList = LinkedList()
         reversedlList = LinkedList()
         node = self._head.next
