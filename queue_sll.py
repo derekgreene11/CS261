@@ -73,6 +73,7 @@ class Queue:
         if self.is_empty():
             self._head = newNode
             self._tail = newNode
+            return
 
         self._tail.next = newNode
         self._tail = newNode 
