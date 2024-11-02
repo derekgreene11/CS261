@@ -1,9 +1,9 @@
-# Name:
-# OSU Email:
+# Name: Derek Greene
+# OSU Email: greenede@oregonstate.edu
 # Course: CS261 - Data Structures
-# Assignment:
-# Due Date:
-# Description:
+# Assignment: Assignment 3 Linked List and ADT Implementation 
+# Due Date: 11/4/2024
+# Description: Completed methods for Queue class to add items at end of que, remove items from start of que, and get value at front of que.
 
 
 from SLNode import SLNode
@@ -64,22 +64,45 @@ class Queue:
 
     def enqueue(self, value: object) -> None:
         """
-        TODO: Write this implementation
+        Method to add given value at end of queue. 
+        Parameters: value: object
+        Returns: None
         """
-        pass
+        newNode = SLNode(value)
+
+        if self.is_empty():
+            self._head = newNode
+            self._tail = newNode
+
+        self._tail.next = newNode
+        self._tail = newNode 
 
     def dequeue(self) -> object:
         """
-        TODO: Write this implementation
+        Method to remove and return value at start of queue. Raises exception if queue is empty.
+        Parameters: None
+        Returns: value: object
         """
-        pass
+        if self.is_empty():
+            raise QueueException("ERROR: Empty Queue!")
+
+        value = self._head.value
+        self._head = self._head.next
+        
+        return value
 
     def front(self) -> object:
         """
-        TODO: Write this implementation
+        Method to return value at start of queue. Raises exception if queue is empty. 
+        Parameters: None
+        Returns: value: object
         """
-        pass
+        if self.is_empty():
+            raise QueueException("ERROR: Empty Queue!")
 
+        value = self._head.value
+
+        return value
 
 # ------------------- BASIC TESTING -----------------------------------------
 
