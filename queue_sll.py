@@ -3,7 +3,7 @@
 # Course: CS261 - Data Structures
 # Assignment: Assignment 3 Linked List and ADT Implementation 
 # Due Date: 11/4/2024
-# Description: Completed methods for Queue class to add items at end of que, remove items from start of que, and get value at front of que.
+# Description: Completed methods for Queue class to add items at end of queue, remove items from start of queue, and get value at front of queue.
 
 
 from SLNode import SLNode

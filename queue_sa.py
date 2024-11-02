@@ -3,7 +3,7 @@
 # Course: CS261 - Data Structures
 # Assignment: Assignment 3 Linked List and ADT Implementation
 # Due Date: 11/4/2024
-# Description: Completed methods for the QueueException class to add new values to end of que, remove values from beginning of que,
+# Description: Completed methods for the Queue class to add new values to end of que, remove values from beginning of que,
 # and to return value at front of que (without removal). 
 
 
